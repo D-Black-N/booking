@@ -1,0 +1,774 @@
+#root {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.header {
+  width: 100%;
+  height: auto;
+}
+
+.background-image {
+  width: 100%;
+  height: 380px;
+  background-image: url(./images/header_back.jpg);
+  background-repeat: no-repeat; 
+  background-size: cover; 
+  font-style: italic;
+}
+
+.background-image p {
+  font-size: 20pt;
+  margin-top: 0;
+  padding-left: 41vw;
+  padding-top: 4vw;
+  color: #27E907;
+}
+
+@media (max-width: 1050px) {
+  .background-image p {
+    padding-top: 6vw;
+    font-size: 17pt;
+  }
+}
+
+.title {
+  display: flex;
+  width: 100%;
+  height: 120px;
+  background-color: #E6E6E6;
+}
+
+.logo {
+  background-image: url(./images/about/kafedr-sibor_logo.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 120px;
+  width: 120px;
+}
+
+.info {
+  width: 100%;
+}
+
+.name, .nav-bar {
+  height: 60px;
+}
+
+.name {
+  display: table-cell;
+  padding-left: 10px;
+  vertical-align: bottom;
+  font-size: 20pt;
+  font-weight: bold;
+  color: #0C2E72;
+  font-family: Montserrat;
+}
+
+.nav-bar {
+  display: flex;
+  background-color: #CEB671;
+  color: #2E8021;
+  font-size: 14pt;
+  width: 100%;
+  font-weight: 450;
+}
+
+ul {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  padding-left: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  width: 25%;
+  text-align: center;
+}
+
+li:hover {
+  background-color: #cc6;
+  cursor: pointer;
+}
+
+li.clicked {
+  background-color: #cc6;
+}
+
+li > p {
+  margin: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.main {
+  height: max-content;
+  min-height: 400px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #E5E5E5;
+}
+
+h2 {
+  text-align: center;
+  color: #0C2E72;
+}
+
+.about-us, .contacts {
+  width: 100%;
+  margin: 20px;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+.image-text {
+  height: max-content;
+  display: flex;
+  align-items: center;
+  overflow: scroll;
+}
+
+.image-text img {
+  width: 40%;
+  min-width: 350px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.image-text p {
+  width: 59%;
+}
+
+.contacts-table {
+  width: 100%;
+  text-align: center;
+  border: 0px;
+}
+
+td {
+  margin: 5px
+}
+
+td.phone-number {
+  display: flex;
+}
+
+td.phone-number div {
+  width: 50%;
+}
+
+.contacts-table tbody tr:nth-child(odd){
+	background: #fff;
+} 
+
+.contacts-table tbody tr:nth-child(even){
+	background: #F7F7F7;
+}
+
+.apartments {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  margin: 10px
+}
+
+.apartment-card {
+  width: 350px;
+  height: 570px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px black;
+  background-color: #5bc42c;
+  margin: 25px
+}
+
+.image-block {
+  margin: 15px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.image-block #prev-photo, .image-block #next-photo {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 30px;
+  background-color: rgba(245, 245, 245, 0.2);
+}
+
+.image-block #next-photo {
+  right: 0;
+}
+
+.image-block #prev-photo:hover, .image-block #next-photo:hover {
+  background-color: rgba(245, 245, 245, 0.5);
+  cursor: pointer;
+}
+
+.image {
+  height: 100%;
+  object-fit: cover;
+  image-rendering: -moz-crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor;
+  image-rendering: crisp-edges;
+}
+
+.image-hidden {
+  display: none;
+}
+
+.card-note {
+  height: 260px;
+  width: 320px;
+  margin-left: 15px;
+  position: relative;
+}
+
+.card-name {
+  text-align: right;
+}
+
+.field-header {
+  padding-left: 10px;
+  margin-top: 8px;
+  margin-bottom: 5px;
+}
+
+.text-field {
+  margin: 5px
+}
+
+.price > .field-header {
+  color: #200f97;
+}
+
+.button {
+  text-align: right;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
+.booking-button {
+  height: 35px;
+  font-size: 11pt;
+  background-color: #ceb571;
+  box-shadow: 2px 2px 5px;
+  border: none;
+  border-radius: 5px;
+  margin-left: 20px;
+}
+
+.booking-button:hover {
+  cursor: pointer;
+}
+
+.booking-button:active {
+  background-color: #EFE5CC;
+}
+
+.apartment {
+  width: 100%;
+}
+
+.apartment-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.description {
+  margin: 15px;
+  width: 60%;
+}
+
+.description .field-header {
+  text-align: left;
+}
+
+.booking {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  height: 150px;
+  background-color: #ceb571;
+}
+
+.booking .field-header {
+  color: #2E8021;
+  padding-left: 20px;
+  width: 100%;
+  height: auto;
+  text-align: left;
+}
+
+.date-block {
+  position: relative;
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .apartment-container {
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .images {
+    margin: auto;
+  }
+
+  h1.field-header {
+    text-align: center;
+  }
+}
+
+.date-fields {
+  display: flex;
+  vertical-align: middle;
+}
+
+.block-fields {
+  background-color: white;
+  width: 150px;
+  height: auto;
+  font-size: 12pt;
+  margin: 5px 20px;
+  padding-left: 5px;
+}
+
+.block-fields:focus {
+  box-shadow: 5px 10px red;
+}
+
+.block-fields input {
+  height: 30px;
+  font-size: 12pt;
+  width: 100px;
+  border: 0px;
+  outline: none;
+}
+
+.block-fields input:hover {
+  cursor: pointer;
+}
+
+.date-field {
+  display: flex;
+  vertical-align: middle;
+}
+
+.select-person {
+  width: 250px;
+  height: 100%;
+  margin: 5px 20px;
+  background-color: white;
+}
+
+.select-person label {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.select-person select {
+  width: 100%;
+  height: 35px;
+  background-color: white;
+  border: 0px;
+  font-size: 12pt;
+  padding-left: 10px;
+}
+
+
+/* Calendar */
+.calendar {
+  background-color: #EFE5CC;
+  width: 600px;
+  height: 400px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  border: 2px solid blue;
+  box-shadow: 10px -5px 5px;
+  position: absolute;
+  left: 50%;
+  top: -250px;
+  margin-left: -300px;
+  display: none;
+}
+
+.selected-month {
+  display: inline-flex;
+  width: 100%;
+  text-align: center;
+  margin: 5px 0;
+}
+
+.month {
+  width: 70%;
+  font-size: 14pt;
+  font-weight: 500;
+}
+
+.arrow {
+  width: 15%;
+}
+
+i {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+i.blocked {
+  border: solid grey;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+i:hover {
+  cursor: pointer;
+}
+
+i.blocked:hover {
+  cursor: auto;
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+.week-days {
+  height: 30px;
+}
+
+.table-calendar {
+  width: 100%;
+}
+
+.table-calendar td {
+  text-align: center;
+  height: 55px;
+  border: 2px solid black;
+  empty-cells: hide;
+  font-size: 14pt;
+}
+
+.table-calendar td.hover:hover {
+  background-color: #27E907;
+  cursor: pointer;
+}
+
+.table-calendar th {
+  padding: 10px 0;
+}
+
+
+label {
+  margin-right: 20px;
+  color: #2E8021;
+  font-weight: bold;
+}
+
+.create-reservation-button {
+  height: 35px;
+  font-size: 12pt;
+  background-color: #2E8021;
+  box-shadow: 2px 2px 5px black;
+  border: none;
+  border-radius: 5px;
+  color: #ceb571;
+  font-weight: bolder;
+  margin-top: 20px;
+  margin-left: 20px;
+  width: 100px;
+}
+
+.create-reservation-button:hover {
+  cursor: pointer;
+}
+
+/* Reservation form for send email with data params of user */
+.reserve-list {
+  display: none;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(88, 88, 88, 0.5);
+  z-index: 1;
+  /* overflow-y: auto; */
+  align-items: center;
+  justify-content: center;
+}
+
+.reserve-list h3 {
+  color: #200f97;
+  text-align: center;
+}
+
+.reserve-data-list {
+  display: inline;
+  min-width: 400px;
+  max-width: 710px;
+  width: 50%;
+  /* text-align: center; */
+  height: 715px;
+  background-color: #ceb571;;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.reserve-param {
+  display: flex;
+}
+
+.reserve-person-info-fields, .reservation-cost {
+  display: flex;
+  height: 35px;
+  margin: 16px 0;
+  vertical-align: middle;
+}
+
+.reservation-cost .p-label, .reservation-cost .p-info {
+  color: #0C2E72;
+  font-size: 16pt;
+  font-weight: bold;
+}
+
+.reserve-person-info-fields .p-label {
+  margin: 0;
+  margin-top: 6px;
+}
+
+.p-label {
+  width: 40%;
+}
+
+.input-person-info, .p-info {
+  width: 50%;
+  font-size: 12pt;
+}
+
+.reserve-phone-checkbox {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 40%;
+}
+
+.call-type {
+  width: 100%;
+  margin: 5px 0;
+}
+
+.call-type label {
+  color: black;
+  font-weight: 400;
+  margin-left: 5px;
+}
+
+#reserve-submit, #reserve-cancel {
+  height: 40px;
+  font-size: 12pt;
+  border: 0;
+  background-color: #2E8021;
+  border-radius: 5px;
+  color: #ceb571;
+  font-weight: bold;
+  box-shadow: 2px 2px 5px black;
+}
+
+#reserve-cancel {
+  margin-left: auto;
+}
+
+.reserve-submit-button {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+#reserve-submit:hover, #reserve-cancel:hover {
+  cursor: pointer;
+}
+
+.new-rewiew {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.new-rewiew h2 {
+  width: 100%;
+  color: #0C2E72;
+}
+
+.send-rewiew {
+  width: 100%;
+  display: flex;
+  position: relative;
+  justify-content: center;
+}
+
+textarea {
+  margin-bottom: 20px;
+  width: 50%;
+  margin-left: 130px;
+  height: 80px;
+  resize: none;
+  font-size: 12pt;
+}
+
+.add-rewiew {
+  height: 35px;
+  font-size: 12pt;
+  background-color: #2E8021;
+  color: #ceb571;
+  box-shadow: 2px 2px 5px black;
+  border: none;
+  border-radius: 5px;
+  margin-left: 50px;
+  margin-top: 45px;
+  font-weight: bolder;
+}
+
+.comments {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.rewiew {
+  width: 98%;
+  border-radius: 10px;
+  box-shadow: 5px 10px 8px;
+  margin: 0px 10px 10px 10px;
+  padding: 20px;
+}
+
+.admin-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: #999966;
+  width: 100%;
+}
+
+.admin-container .login-form {
+  display: grid;
+  width: 300px;
+  margin: 50px;
+  grid-auto-rows: 30px;
+  grid-template-columns: 50% 50%;
+  row-gap: 5px;
+}
+
+.login-form label {
+  margin-top: 12px;
+  margin-left: 10px;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.login-form input {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.login-form #login-button {
+  grid-column: 1;
+}
+
+.admin-menu {
+  width: 100%;
+  padding-left: 25%;
+}
+
+.admin-select-button {
+  width: 50%;
+  margin: 10px 50px; 
+  height: 30px;
+  font-size: 12pt;
+}
+
+.admin-about-us {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center
+}
+
+.admin-about-us h2 {
+  width: 100%;
+}
+
+.admin-about-us textarea {
+  margin: 0 20%;
+  margin-bottom: 10px;
+  width: 60%;
+  height: 300px;
+}
+
+.admin-about-us input {
+  width: 200px;
+  height: 30px;
+  font-size: 12pt;
+  margin-bottom: 10px;
+}
+
+.apart-management {
+  width: 100%;
+}
+
+#apart-form {
+  width: 100%;
+  display: grid;
+}
+
+#apart-form .add-photos {
+  width: 50%;
+  display: grid;
+  grid-auto-rows: 30px;
+}
+
+#apart-form .add-name {
+  width: 50%;
+  display: grid;
+  grid-auto-rows: 30px;
+}
+
+
+#apart-form .add-info {
+  display: grid;
+  width: 100%;
+  grid-template-rows: 30px 200px;
+}
+
+#apart-form .add-info textarea {
+  width: 50%;
+  height: 180px;
+}
+
+#apart-form .add-contacts {
+  width: 100%;
+  grid-auto-rows: 50px;
+}
+
+#apart-form #submit-apart {
+  width: 200px;
+  margin-top: 20px;
+}
+
+.footer {
+  width: 100%;
+  height: 100px;
+  background-color: #CEB671;
+}
