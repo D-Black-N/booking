@@ -17,6 +17,14 @@
   background-size: 100%;
 }
 
+.background-image p {
+  font-size: 20pt;
+  margin-top: 0;
+  padding-left: 30vw;
+  padding-top: 8vh;
+  color: #27E907;
+}
+
 .title {
   display: flex;
   width: 100%;
@@ -56,7 +64,7 @@
   font-weight: 450;
 }
 
-.nav-bar > ul {
+ul {
   width: 100%;
   height: 60px;
   display: flex;
@@ -91,7 +99,256 @@ li > p {
   height: max-content;
   min-height: 200px;
   width: 100%;
-  /* background-color: #EFE5CC; */
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #E5E5E5;
+}
+
+h2 {
+  text-align: center;
+  color: #0C2E72;
+}
+
+.about-us, .contacts {
+  width: 100%;
+  margin: 20px;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+.contacts-table {
+  width: 80%;
+  text-align: center;
+}
+
+td {
+  margin: 5px
+}
+
+.apartments {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  margin: 10px
+}
+
+.apartment-card {
+  width: 350px;
+  height: 570px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px black;
+  background-color: #27E907;
+  margin: 25px
+}
+
+.image-block {
+  margin: 15px;
+  border-radius: 5px;
+}
+
+.image {
+  height: 100%;
+  object-fit: cover;
+  image-rendering: -moz-crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor;
+  image-rendering: crisp-edges;
+}
+
+.image-hidden {
+  display: none;
+}
+
+.card-note {
+  height: 260px;
+  width: 320px;
+  margin-left: 15px;
+  position: relative;
+}
+
+.card-name {
+  text-align: right;
+}
+
+.field-header {
+  padding-left: 10px;
+  margin-top: 8px;
+  margin-bottom: 5px;
+}
+
+.text-field {
+  margin: 5px
+}
+
+.price > .field-header {
+  color: #f00a0a;
+}
+
+.button {
+  text-align: right;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
+.booking-button {
+  height: 35px;
+  font-size: 11pt;
+  background-color: blueviolet;
+  box-shadow: 2px 2px 5px;
+  border: none;
+}
+
+.booking-button:hover {
+  cursor: pointer;
+}
+
+.booking-button:active {
+  background-color: #EFE5CC;
+}
+
+.apartment {
+  width: 100%;
+}
+
+.apartment-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.description {
+  margin: 15px;
+  width: 60%;
+}
+
+.description .field-header {
+  text-align: left;
+}
+
+.booking {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  height: 150px;
+  background-color: blue;
+}
+
+.booking .field-header {
+  color: #27E907;
+  padding-left: 20px;
+  width: 100%;
+  height: auto;
+  text-align: left;
+}
+
+.date-block {
+  position: relative;
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .apartment-container {
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .images {
+    margin: auto;
+  }
+
+  h1.field-header {
+    text-align: center;
+  }
+}
+
+/* Calendar */
+.calendar {
+  background-color: #EFE5CC;
+  width: 600px;
+  height: 400px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  border: 2px solid blue;
+  box-shadow: 10px -5px 5px;
+  position: absolute;
+  left: 50%;
+  top: -50px;
+  margin-left: -300px;
+  /* display: none; */
+}
+
+.selected-month {
+  display: inline-flex;
+  width: 100%;
+  text-align: center;
+  margin: 5px 0;
+}
+
+.month {
+  width: 70%;
+  font-size: 14pt;
+  font-weight: 500;
+}
+
+.arrow {
+  width: 15%;
+}
+
+i {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+i.blocked {
+  border: solid grey;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+i:hover {
+  cursor: pointer;
+}
+
+i.blocked:hover {
+  cursor: auto;
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+.week-days {
+  height: 30px;
+}
+
+.table-calendar {
+  width: 100%;
+}
+
+.table-calendar td {
+  text-align: center;
+  height: 55px;
+  border: 2px solid black;
+  empty-cells: hide;
+  font-size: 14pt;
+}
+
+.table-calendar td.hover:hover {
+  background-color: #27E907;
+  cursor: pointer;
+}
+
+.table-calendar th {
+  padding: 10px 0;
 }
 
 .footer {

@@ -9,9 +9,9 @@ export default function Contacts() {
   ]
 
   return (
-    <>
+    <div className='contacts'>
       <h2>Контакты</h2>
-      <table>
+      <table className='contacts-table'>
         <thead>
           <tr>
             <th>Имя</th>
@@ -29,6 +29,6 @@ export default function Contacts() {
           )) }
         </tbody>
       </table>
-    </>
+    </div>
   )
 }
