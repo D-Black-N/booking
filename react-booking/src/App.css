@@ -272,9 +272,9 @@ td {
   box-shadow: 10px -5px 5px;
   position: absolute;
   left: 50%;
-  top: -50px;
+  top: -250px;
   margin-left: -300px;
-  /* display: none; */
+  display: none;
 }
 
 .selected-month {
@@ -349,6 +349,212 @@ i.blocked:hover {
 
 .table-calendar th {
   padding: 10px 0;
+}
+
+.input-date {
+  width: 100px;
+  height: 30px;
+  /* margin: 50px; */
+  font-size: 12pt;
+  padding-left: 20px;
+  background-color: white;
+}
+
+.input-date:hover {
+  cursor: pointer;
+}
+
+.date-fields {
+  display: flex;
+}
+
+.block-fields {
+  margin: 0px 50px;
+}
+
+label {
+  margin-right: 20px;
+  color: #27E907;
+  font-weight: bold;
+}
+
+.create-reservation {
+  height: 35px;
+  font-size: 12pt;
+  background-color: #d2c407;
+  box-shadow: 2px 2px 5px;
+  border: none;
+  border-radius: 5px;
+  /* color: #0C2E72; */
+  font-weight: bolder;
+}
+
+.create-reservation:hover {
+  cursor: pointer;
+  background-color: #27E907;
+}
+
+.new-rewiew {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.new-rewiew h2 {
+  width: 100%;
+  color: #e68608;
+}
+
+.send-rewiew {
+  width: 100%;
+  display: flex;
+  position: relative;
+  justify-content: center;
+}
+
+textarea {
+  margin-bottom: 20px;
+  width: 50%;
+  margin-left: 130px;
+  height: 80px;
+  resize: none;
+}
+
+.add-rewiew {
+  height: 35px;
+  font-size: 12pt;
+  background-color: #d2c407;
+  box-shadow: 2px 2px 5px;
+  border: none;
+  border-radius: 5px;
+  margin-left: 50px;
+  margin-top: 45px;
+  font-weight: bolder;
+}
+
+.comments {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.rewiew {
+  width: 98%;
+  border-radius: 10px;
+  box-shadow: 5px 10px 8px;
+  margin: 0px 10px 10px 10px;
+  padding: 20px;
+}
+
+.admin-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: #999966;
+  width: 100%;
+}
+
+.admin-container .login-form {
+  display: grid;
+  width: 300px;
+  margin: 50px;
+  grid-auto-rows: 30px;
+  grid-template-columns: 50% 50%;
+  row-gap: 5px;
+}
+
+.login-form label {
+  margin-top: 12px;
+  margin-left: 10px;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.login-form input {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.login-form #login-button {
+  grid-column: 1;
+}
+
+.admin-menu {
+  width: 100%;
+  padding-left: 25%;
+}
+
+.admin-select-button {
+  width: 50%;
+  margin: 10px 50px; 
+  height: 30px;
+  font-size: 12pt;
+}
+
+.admin-about-us {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center
+}
+
+.admin-about-us h2 {
+  width: 100%;
+}
+
+.admin-about-us textarea {
+  margin: 0 20%;
+  margin-bottom: 10px;
+  width: 60%;
+  height: 300px;
+}
+
+.admin-about-us input {
+  width: 200px;
+  height: 30px;
+  font-size: 12pt;
+  margin-bottom: 10px;
+}
+
+.apart-management {
+  width: 100%;
+}
+
+#apart-form {
+  width: 100%;
+  display: grid;
+}
+
+#apart-form .add-photos {
+  width: 50%;
+  display: grid;
+  grid-auto-rows: 30px;
+}
+
+#apart-form .add-name {
+  width: 50%;
+  display: grid;
+  grid-auto-rows: 30px;
+}
+
+
+#apart-form .add-info {
+  display: grid;
+  width: 100%;
+  grid-template-rows: 30px 200px;
+}
+
+#apart-form .add-info textarea {
+  width: 50%;
+  height: 180px;
+}
+
+#apart-form .add-contacts {
+  width: 100%;
+  grid-auto-rows: 50px;
+}
+
+#apart-form #submit-apart {
+  width: 200px;
+  margin-top: 20px;
 }
 
 .footer {

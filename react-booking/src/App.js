@@ -1,14 +1,17 @@
 import './App.css';
-import Footer from './footer/Footer';
-import Header from './header/Header';
-import Main from './main/Main';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import User from './User';
+import Admin from './admin/Admin';
 
 function App() {
   return (
     <>
-      <Header />
-      <Main />
-      <Footer />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={ <User /> } />
+          <Route path="admin" element={ <Admin /> } />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

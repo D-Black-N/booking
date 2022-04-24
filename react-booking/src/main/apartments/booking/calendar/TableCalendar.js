@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react'
 
-export default function TableCalendar({ date, month }) {
+export default function TableCalendar({ date, month, field }) {
   const weekdays = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс']
+
+  const [date_param, setDateParam] = useState(0)
+  // const [input_field, setInputField] = useState()
 
   const renderMonthArray = () => {
     const month_start = new Date(date.getFullYear(), date.getMonth(), 1)
@@ -55,6 +58,17 @@ export default function TableCalendar({ date, month }) {
       }
     }
   }, month_days)
+
+  const handleSelectDate = (event) => {
+    setDateParam(new Date(date.getFullYear(), date.getMonth(), Number(event.target.textContent)))
+    document.querySelector('.calendar').style.display = 'none'
+  }
+
+  useEffect(() => { 
+    if (date_param !== 0)
+      field.value = new Date(date_param).toLocaleDateString('ru-RU', {day: '2-digit', month: '2-digit', year: 'numeric'})
+  }, [date_param])
+  
   
   return (
     <table className='table-calendar'>
@@ -65,7 +79,7 @@ export default function TableCalendar({ date, month }) {
           ))}
         </tr>
       </thead>
-      <tbody>
+      <tbody onClick={handleSelectDate}>
         { month_days.map((arr, index) => (
           <tr key={index}>
             { arr.map((day, ind) => (

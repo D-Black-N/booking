@@ -6,7 +6,7 @@ export default function Title() {
     <div className='title'>
       <div className='logo'></div>
       <div className='info'>
-        <div className='name'>Ambervisit</div>
+        <div className='name'>BaltikaVisit</div>
         <NavBar />
       </div>
     </div>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import TableCalendar from './TableCalendar'
 
-export default function Calendar() {
+export default function Calendar({ field }) {
   const [date, setDate] = useState(new Date())
   const [month, setMonth] = useState(new Date().getMonth())
   // let output_date = date
@@ -40,7 +40,7 @@ export default function Calendar() {
         <div className='arrow'><i className='right'></i></div>
       </div>
       <div className='week-days'>
-        <TableCalendar date={new Date(date)} month={month} />
+        <TableCalendar date={new Date(date)} month={month} field={field} />
       </div>  
     </div>
   )
