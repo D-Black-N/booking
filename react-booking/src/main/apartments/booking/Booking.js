@@ -42,7 +42,7 @@ export default function Booking() {
           <div className='date-fields'>
             <InputDate openCalendar={handeOpenCalendar} name='date_start' label='Дата заезда' />
             <InputDate openCalendar={handeOpenCalendar} name='date_end' label='Дата выезда' />
-            <input type='submit' className='create-reservation' value='Создать бронь' onClick={handleClickBooking} />
+            <input type='submit' className='create-reservation' value='Выбрать' onClick={handleClickBooking} />
           </div>
         </form>
       </div>

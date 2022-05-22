@@ -1,32 +1,59 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 export default function Contacts() {
+  const [text, setText] = useState('')
 
-  let contacts = [
-    {id: 1, name: 'danil', phone: '+79227764790', email: 'grandvitaro07@gmail.com'},
-    {id: 2, name: 'ilnur', phone: '+79510121246', email: 'ilnur@yandex.com'},
-    {id: 3, name: 'olga',  phone: '+79174686401', email: 'nasibullina@mail.ru'}
+  const apartments = [
+    {
+      id: 1,
+      apartment: 'ParkApartment',
+      contacts: [
+        {name: 'Danil', phone: '89227764790', email: 'danil-nasibullin@mail.ru', whats_app: true, viber: true, telegram: true},
+        {name: 'Maks', phone: '89227764790', email: 'grandvitaro07@gmail.com', telegram: true},
+      ]
+    },
+    {
+      id: 2,
+      apartment: 'CentralApartment',
+      contacts: [
+        {name: 'Danil', phone: '89227764790', email: 'danil-nasibullin@mail.ru', whats_app: true, viber: true, telegram: true},
+        {name: 'Maks', phone: '89227764790', email: 'grandvitaro07@gmail.com', telegram: true},
+      ]
+    },
+    {
+      id: 3,
+      apartment: 'GagarinApartment',
+      contacts: [
+        {name: 'Danil', phone: '89227764790', email: 'danil-nasibullin@mail.ru', whats_app: true, viber: true, telegram: true},
+        // {name: 'Maks', phone: '89227764790', email: 'grandvitaro07@gmail.com', telegram: true},
+      ]
+    }
   ]
+
+  const render_apartment_col = (apartment) => {
+    return (<td rowSpan={apartment.contacts.length}>{apartment.apartment}</td>)
+  }
 
   return (
     <div className='contacts'>
-      <h2>Контакты</h2>
       <table className='contacts-table'>
         <thead>
           <tr>
-            <th>Имя</th>
-            <th>Телефон</th>
+            <th>Апартаменты</th>
+            <th>Владелец</th>
             <th>Почта</th>
+            <th>Телефон</th>
           </tr>
         </thead>
         <tbody>
-          { contacts.map(person => (
-            <tr key={person.id}>
-              <td>{person.name}</td>
-              <td>{person.phone}</td>
-              <td>{person.email}</td>
-            </tr>
-          )) }
+          { apartments.map((apartment, key) => (
+              apartment.contacts.map((contact, index) => (
+                <tr>
+                  { text !== apartment.apartment ? <td rowSpan={apartment.contacts.length}>{apartment.apartment}</td> : <></>}
+                </tr>
+              ))
+          ))
+          }
         </tbody>
       </table>
     </div>

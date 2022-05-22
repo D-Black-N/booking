@@ -18,7 +18,6 @@ export default function Rewiews() {
 
   return (
     <div className='rewiews'>
-      <h1 className='field-header'>Отзывы</h1>
       <NewRewiew />
       <div className='comments'>
         { rewiews.map((rewiew, index) => (

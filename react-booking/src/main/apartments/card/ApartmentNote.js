@@ -16,11 +16,11 @@ export default function ApartmentNote({ name, note, address, price, openApartmen
       </div>
 
       <div className='price'>
-        <h3 className='field-header'>Стоимость: {price} &#8381;</h3>
+        <h3 className='field-header'>Стоимость: от {price} &#8381;</h3>
       </div>
 
       <div className='button'>
-        <input type='button' value={'Забронировать'} className='booking-button' onClick={openApartmentClick} />
+        <input type='button' value={'Подробнее'} className='booking-button' onClick={openApartmentClick} />
       </div>
     </div>
   )

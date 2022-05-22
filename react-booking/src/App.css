@@ -6,33 +6,43 @@
 .header {
   width: 100%;
   height: auto;
-  
 }
 
 .background-image {
   width: 100%;
-  height: 50vh;
-  background-image: url(./images/second.jpg);
-  background-repeat: no-repeat;
-  background-size: 100%;
+  height: 380px;
+  background-image: url(./images/header_back.jpg);
+  background-repeat: no-repeat; 
+  background-size: cover; 
+  font-style: italic;
 }
 
 .background-image p {
   font-size: 20pt;
   margin-top: 0;
-  padding-left: 30vw;
-  padding-top: 8vh;
+  padding-left: 41vw;
+  padding-top: 4vw;
   color: #27E907;
+}
+
+@media (max-width: 1050px) {
+  .background-image p {
+    padding-top: 6vw;
+    font-size: 17pt;
+  }
 }
 
 .title {
   display: flex;
   width: 100%;
   height: 120px;
-  background-color: #EFE5CC;
+  background-color: #E6E6E6;
 }
 
 .logo {
+  background-image: url(./images/kafedr-sibor_logo.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
   height: 120px;
   width: 120px;
 }
@@ -57,8 +67,8 @@
 
 .nav-bar {
   display: flex;
-  background-color: #71674D;
-  color: #27E907;
+  background-color: #CEB671;
+  color: #2E8021;
   font-size: 14pt;
   width: 100%;
   font-weight: 450;
@@ -81,12 +91,12 @@ li {
 }
 
 li:hover {
-  background-color: #999966;
+  background-color: #cc6;
   cursor: pointer;
 }
 
 li.clicked {
-  background-color: #999966;
+  background-color: #cc6;
 }
 
 li > p {
@@ -116,13 +126,39 @@ h2 {
   text-align: justify;
 }
 
+.image-text {
+  height: max-content;
+  display: flex;
+  align-items: center;
+  overflow: scroll;
+}
+
+.image-text img {
+  width: 40%;
+  min-width: 350px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.image-text p {
+  width: 59%;
+}
+
 .contacts-table {
-  width: 80%;
+  width: 100%;
   text-align: center;
 }
 
 td {
   margin: 5px
+}
+
+.contacts-table tbody tr:nth-child(odd){
+	background: #fff;
+} 
+
+.contacts-table tbody tr:nth-child(even){
+	background: #F7F7F7;
 }
 
 .apartments {
@@ -138,7 +174,7 @@ td {
   height: 570px;
   border-radius: 5px;
   box-shadow: 5px 5px 5px black;
-  background-color: #27E907;
+  background-color: #5bc42c;
   margin: 25px
 }
 
@@ -181,7 +217,7 @@ td {
 }
 
 .price > .field-header {
-  color: #f00a0a;
+  color: #200f97;
 }
 
 .button {
@@ -194,9 +230,10 @@ td {
 .booking-button {
   height: 35px;
   font-size: 11pt;
-  background-color: blueviolet;
+  background-color: #ceb571;
   box-shadow: 2px 2px 5px;
   border: none;
+  border-radius: 5px;
 }
 
 .booking-button:hover {
@@ -231,11 +268,11 @@ td {
   display: flex;
   flex-wrap: wrap;
   height: 150px;
-  background-color: blue;
+  background-color: #ceb571;
 }
 
 .booking .field-header {
-  color: #27E907;
+  color: #2E8021;
   padding-left: 20px;
   width: 100%;
   height: auto;
@@ -374,24 +411,23 @@ i.blocked:hover {
 
 label {
   margin-right: 20px;
-  color: #27E907;
+  color: #2E8021;
   font-weight: bold;
 }
 
 .create-reservation {
   height: 35px;
   font-size: 12pt;
-  background-color: #d2c407;
-  box-shadow: 2px 2px 5px;
+  background-color: #2E8021;
+  box-shadow: 2px 2px 5px black;
   border: none;
   border-radius: 5px;
-  /* color: #0C2E72; */
+  color: #ceb571;
   font-weight: bolder;
 }
 
 .create-reservation:hover {
   cursor: pointer;
-  background-color: #27E907;
 }
 
 .new-rewiew {
@@ -401,7 +437,7 @@ label {
 
 .new-rewiew h2 {
   width: 100%;
-  color: #e68608;
+  color: #0C2E72;
 }
 
 .send-rewiew {
@@ -422,8 +458,9 @@ textarea {
 .add-rewiew {
   height: 35px;
   font-size: 12pt;
-  background-color: #d2c407;
-  box-shadow: 2px 2px 5px;
+  background-color: #2E8021;
+  color: #ceb571;
+  box-shadow: 2px 2px 5px black;
   border: none;
   border-radius: 5px;
   margin-left: 50px;
@@ -560,5 +597,5 @@ textarea {
 .footer {
   width: 100%;
   height: 100px;
-  background-color: #71674D;
+  background-color: #CEB671;
 }
