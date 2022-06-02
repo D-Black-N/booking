@@ -11,24 +11,30 @@ export default function ImageBlock({ images, width, height }) {
 
   const change_photo = (event) => {
     const target = event.target
-    const images_nodes = target.parentNode.childNodes
-    if (Number(target.id) !== images.length - 1) {
-      images_nodes[index].classList.add('image-hidden')
-      images_nodes[index + 1].classList.remove('image-hidden')
-      setIndex(prev => prev += 1)
+    const images_nodes = target.parentNode.querySelectorAll('img')
+    if (target.id === 'next-photo') {
+      if (index < images.length - 1) {
+        images_nodes[index].classList.add('image-hidden')
+        images_nodes[index + 1].classList.remove('image-hidden')
+        setIndex(prev => prev += 1)        
+      }
     }
     else {
-      images_nodes[index].classList.add('image-hidden')
-      images_nodes[0].classList.remove('image-hidden')
-      setIndex(0)
+      if (index > 0) {
+        images_nodes[index].classList.add('image-hidden')
+        images_nodes[index - 1].classList.remove('image-hidden')
+        setIndex(prev => prev -= 1)
+      }
     }
   }
 
   return (
-    <div className='image-block' onClick={change_photo} style={{width: width + 'px', height: height + 'px'}} >
+    <div className='image-block' style={{width: width + 'px', height: height + 'px'}} >
       { images.map((image_url, index) => (
-          <img key={index} src={image_url} alt='apartment' className='image image-hidden' id={index} width={width} />  
+            <img key={index} src={image_url} alt='apartment' className='image image-hidden' id={index} width={width} />
       ))}
+      <div id='next-photo' onClick={change_photo}></div>
+      <div id='prev-photo' onClick={change_photo}></div>
     </div>
   )
 }

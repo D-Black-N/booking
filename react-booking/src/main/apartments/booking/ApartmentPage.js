@@ -1,5 +1,5 @@
 import React from 'react'
-import Booking from './Booking'
+import Booking from './selection/Booking'
 import Descrioption from '../Descrioption'
 import ImageBlock from '../ImageBlock'
 import Rewiews from './rewiews/Rewiews'

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
-import Calendar from './calendar/Calendar'
-import InputDate from './InputDate'
+import Calendar from '../calendar/Calendar'
+import InputDate from '../InputDate'
+import InputPersons from './InputPersons'
 
 const DATE_FORMAT = /\w{2}\.\w{2}\.\w{4}/
 
@@ -42,6 +43,7 @@ export default function Booking() {
           <div className='date-fields'>
             <InputDate openCalendar={handeOpenCalendar} name='date_start' label='Дата заезда' />
             <InputDate openCalendar={handeOpenCalendar} name='date_end' label='Дата выезда' />
+            <InputPersons />
             <input type='submit' className='create-reservation' value='Выбрать' onClick={handleClickBooking} />
           </div>
         </form>

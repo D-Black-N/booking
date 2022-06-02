@@ -1,9 +1,9 @@
 import React from 'react'
-import lower from '../images/lower.jpeg'
-import high from '../images/high.jpeg'
-import don from '../images/don.jpeg'
-import vrangel from '../images/vrangel.jpeg'
-import garden from '../images/garden.jpeg'
+import lower from '../images/about/lower.jpeg'
+import high from '../images/about/high.jpeg'
+import don from '../images/about/don.jpeg'
+import vrangel from '../images/about/vrangel.jpeg'
+import garden from '../images/about/garden.jpeg'
 
 
 export default function AboutUs() {

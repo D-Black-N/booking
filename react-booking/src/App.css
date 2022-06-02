@@ -40,7 +40,7 @@
 }
 
 .logo {
-  background-image: url(./images/kafedr-sibor_logo.jpg);
+  background-image: url(./images/about/kafedr-sibor_logo.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   height: 120px;
@@ -107,7 +107,7 @@ li > p {
 
 .main {
   height: max-content;
-  min-height: 200px;
+  min-height: 400px;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -147,10 +147,19 @@ h2 {
 .contacts-table {
   width: 100%;
   text-align: center;
+  border: 0px;
 }
 
 td {
   margin: 5px
+}
+
+td.phone-number {
+  display: flex;
+}
+
+td.phone-number div {
+  width: 50%;
 }
 
 .contacts-table tbody tr:nth-child(odd){
@@ -181,6 +190,24 @@ td {
 .image-block {
   margin: 15px;
   border-radius: 5px;
+  position: relative;
+}
+
+.image-block #prev-photo, .image-block #next-photo {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 30px;
+  background-color: rgba(245, 245, 245, 0.2);
+}
+
+.image-block #next-photo {
+  right: 0;
+}
+
+.image-block #prev-photo:hover, .image-block #next-photo:hover {
+  background-color: rgba(245, 245, 245, 0.5);
+  cursor: pointer;
 }
 
 .image {
@@ -234,6 +261,7 @@ td {
   box-shadow: 2px 2px 5px;
   border: none;
   border-radius: 5px;
+  margin-left: 20px;
 }
 
 .booking-button:hover {
@@ -298,6 +326,48 @@ td {
     text-align: center;
   }
 }
+
+.date-fields {
+  display: flex;
+  vertical-align: middle;
+}
+
+.block-fields {
+  background-color: white;
+  width: 150px;
+  height: auto;
+  font-size: 12pt;
+  margin: 5px 20px;
+  padding-left: 5px;
+}
+
+.block-fields input {
+  height: 30px;
+  font-size: 12pt;
+  width: 100px;
+  border: 0px;
+  outline: none;
+}
+
+.block-fields input:hover {
+  cursor: pointer;
+}
+
+
+.date-field {
+  display: flex;
+  vertical-align: middle;
+}
+
+.select-person {
+  background-color: white;
+}
+
+.select-person label {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
 
 /* Calendar */
 .calendar {
@@ -388,26 +458,6 @@ i.blocked:hover {
   padding: 10px 0;
 }
 
-.input-date {
-  width: 100px;
-  height: 30px;
-  /* margin: 50px; */
-  font-size: 12pt;
-  padding-left: 20px;
-  background-color: white;
-}
-
-.input-date:hover {
-  cursor: pointer;
-}
-
-.date-fields {
-  display: flex;
-}
-
-.block-fields {
-  margin: 0px 50px;
-}
 
 label {
   margin-right: 20px;
@@ -453,6 +503,7 @@ textarea {
   margin-left: 130px;
   height: 80px;
   resize: none;
+  font-size: 12pt;
 }
 
 .add-rewiew {

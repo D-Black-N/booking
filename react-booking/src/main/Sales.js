@@ -6,10 +6,11 @@ export default function Sales() {
 
   return (
     <div className='sales'>
-      <h2>Бронирование нескольких дней всегда выгоднее!</h2>
-      {all_sales.map((sale) => (
-        <div key={sale[0]}>От {sale[0]} дней: {sale[1]}%</div>
-      ))}
+      <ol>
+        {all_sales.map((sale) => (
+          <li key={sale[0]}>От {sale[0]} дней: {sale[1]}%</li>
+        ))}
+      </ol>
     </div>
   )
 }

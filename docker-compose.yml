@@ -2,6 +2,7 @@ version: '3'
 services:
   react-booking:
     build: ./react-booking
+    command: yarn start
     volumes:
       - ./react-booking:/app
     ports:

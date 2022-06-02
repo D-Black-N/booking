@@ -1,4 +1,7 @@
 import React, { useState } from 'react'
+import Telegram from '../images/logs/telegram.png'
+import WhatsApp from '../images/logs/whatsapp.png'
+import Viber from '../images/logs/viber.png'
 
 export default function Contacts() {
   const [text, setText] = useState('')
@@ -6,7 +9,7 @@ export default function Contacts() {
   const apartments = [
     {
       id: 1,
-      apartment: 'ParkApartment',
+      name: 'ParkApartment',
       contacts: [
         {name: 'Danil', phone: '89227764790', email: 'danil-nasibullin@mail.ru', whats_app: true, viber: true, telegram: true},
         {name: 'Maks', phone: '89227764790', email: 'grandvitaro07@gmail.com', telegram: true},
@@ -14,7 +17,7 @@ export default function Contacts() {
     },
     {
       id: 2,
-      apartment: 'CentralApartment',
+      name: 'CentralApartment',
       contacts: [
         {name: 'Danil', phone: '89227764790', email: 'danil-nasibullin@mail.ru', whats_app: true, viber: true, telegram: true},
         {name: 'Maks', phone: '89227764790', email: 'grandvitaro07@gmail.com', telegram: true},
@@ -22,17 +25,13 @@ export default function Contacts() {
     },
     {
       id: 3,
-      apartment: 'GagarinApartment',
+      name: 'GagarinApartment',
       contacts: [
         {name: 'Danil', phone: '89227764790', email: 'danil-nasibullin@mail.ru', whats_app: true, viber: true, telegram: true},
-        // {name: 'Maks', phone: '89227764790', email: 'grandvitaro07@gmail.com', telegram: true},
+        {name: 'Maks', phone: '89227764790', email: 'grandvitaro07@gmail.com', telegram: true},
       ]
     }
   ]
-
-  const render_apartment_col = (apartment) => {
-    return (<td rowSpan={apartment.contacts.length}>{apartment.apartment}</td>)
-  }
 
   return (
     <div className='contacts'>
@@ -46,14 +45,25 @@ export default function Contacts() {
           </tr>
         </thead>
         <tbody>
-          { apartments.map((apartment, key) => (
-              apartment.contacts.map((contact, index) => (
-                <tr>
-                  { text !== apartment.apartment ? <td rowSpan={apartment.contacts.length}>{apartment.apartment}</td> : <></>}
-                </tr>
-              ))
-          ))
-          }
+          { apartments.map(apartment => (
+            apartment.contacts.map((contact, index) => (
+              <tr>
+                { index === 0 ? <td rowSpan={apartment.contacts.length}>{apartment.name}</td> : <></>}
+                <td>{contact.name} </td>
+                <td>{contact.email}</td>
+                <td className='phone-number'>
+                  <div>
+                    {contact.phone}
+                  </div>
+                  <div>
+                    {contact.telegram ? <img src={Telegram} height='40px' /> : <></>}
+                    {contact.whats_app ? <img src={WhatsApp} height='40px' /> : <></>}
+                    {contact.viber ? <img src={Viber} height='40px' /> : <></>}
+                  </div>
+                </td>
+              </tr>
+            ))
+          ))}
         </tbody>
       </table>
     </div>

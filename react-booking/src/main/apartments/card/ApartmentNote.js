@@ -20,7 +20,7 @@ export default function ApartmentNote({ name, note, address, price, openApartmen
       </div>
 
       <div className='button'>
-        <input type='button' value={'Подробнее'} className='booking-button' onClick={openApartmentClick} />
+        &#9969; 6&#128100;<input type='button' value={'Подробнее'} className='booking-button' onClick={openApartmentClick} />
       </div>
     </div>
   )
