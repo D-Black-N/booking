@@ -2,7 +2,7 @@ FROM ruby:3.0.3
 
 RUN apt-get update -qq && apt-get install -y locales
 
-ENV APP_PATH=/backend
+ENV APP_PATH=/app
 ENV TZ='Europe/Moscow'
 WORKDIR ${APP_PATH}
 
