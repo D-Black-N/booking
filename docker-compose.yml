@@ -4,7 +4,7 @@ services:
     build: ./rails-booking
     command: rails s -b 0.0.0.0
     volumes:
-      - ./rails-booking:/backend
+      - ./rails-booking:/app
     ports:
       - 3000:3000
     depends_on:
