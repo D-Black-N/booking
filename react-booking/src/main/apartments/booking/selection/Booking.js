@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Calendar from '../calendar/Calendar'
 import InputDate from '../InputDate'
 import InputPersons from './InputPersons'
+import ReserveList from './reserve/ReserveList'
 
 const DATE_FORMAT = /\w{2}\.\w{2}\.\w{4}/
 
@@ -20,17 +21,21 @@ export default function Booking() {
 
   const handleClickBooking = (event) => {
     event.preventDefault()
+    const pattern = /(\d{2})\.(\d{2})\.(\d{4})/;
     const form = event.target.parentNode
-    // console.log(form.querySelectorAll('.input-date'))
     const date_fields = form.querySelectorAll('.input-date')
-    if (DATE_FORMAT.test(date_fields[0].value) && DATE_FORMAT.test(date_fields[1].value)) {
-      // Выполнить запрос к БД
+    const check_in = new Date(date_fields[0].value.replace(pattern,'$3-$2-$1')) 
+    const check_out = new Date(date_fields[1].value.replace(pattern,'$3-$2-$1')) 
+    if (check_in > check_out) {
+      date_fields[0].parentNode.parentNode.focus()
     }
     else {
-      if (!DATE_FORMAT.test(date_fields[0].value))
-        date_fields[0].focus()
-      else
-        date_fields[1].focus()
+      document.querySelector('body').style.overflow = 'hidden'
+      const reserve_list_block = document.querySelector('.reserve-list')
+      reserve_list_block.style.display = 'flex'
+      reserve_list_block.style.top = window.pageYOffset + 'px'
+
+      
     }
   }
 
@@ -39,15 +44,17 @@ export default function Booking() {
       <h2 className='field-header'>Бронирование</h2>
       <div className='date-block'>
         <Calendar field={input_field} />
-        <form>
+        <form onSubmit={handleClickBooking} >
           <div className='date-fields'>
             <InputDate openCalendar={handeOpenCalendar} name='date_start' label='Дата заезда' />
             <InputDate openCalendar={handeOpenCalendar} name='date_end' label='Дата выезда' />
-            <InputPersons />
-            <input type='submit' className='create-reservation' value='Выбрать' onClick={handleClickBooking} />
+            <InputPersons selector_type='кол-во взрослых' />
+            <InputPersons selector_type='кол-во детей' />
+            <input type='submit' className='create-reservation-button' value='Выбрать' />
           </div>
         </form>
       </div>
+      <ReserveList />
     </div>
   )
 }

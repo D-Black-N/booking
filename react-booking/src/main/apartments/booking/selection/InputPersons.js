@@ -1,24 +1,18 @@
 import React from 'react'
-import Select from 'react-select'
 
-export default function InputPersons() {
+export default function InputPersons({selector_type}) {
 
-    const options = [
-        {value: 1,  label: '1'},
-        {value: 2,  label: '2'},
-        {value: 3,  label: '3'},
-    ]
-
-    const Style = {
-      option : (provided, state) => ({
-        ...provided,
-      })
-    }
+    const options = [1, 2, 3, 4, 5]
 
   return (
     <div className='select-person'>
-      <label htmlFor='persons'>Количество человек</label>
-      <Select options={options} id='persons' name='persons' />
+      <label htmlFor='persons'>{selector_type[0].toUpperCase() + selector_type.slice(1)}</label>
+      <select name='persons'>
+        <option disabled selected>Выберите {selector_type}</option>
+        { options.map(element => (
+          <option value={element}>{element}</option>
+        )) }
+      </select>
     </div>
   )
 }
