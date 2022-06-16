@@ -4,10 +4,9 @@ import InputDate from '../InputDate'
 import InputPersons from './InputPersons'
 import ReserveList from './reserve/ReserveList'
 
-const DATE_FORMAT = /\w{2}\.\w{2}\.\w{4}/
 
 export default function Booking() {
-
+  const [information, setInformation] = useState([])
   const [input_field, setInputField] = useState()
 
   const handeOpenCalendar = (event) => {
@@ -19,23 +18,69 @@ export default function Booking() {
       calendar.style.display = 'inline'
   }
 
+  const fieldsValidator = (form, form_data) => {
+    return dateValidation(form.querySelectorAll('.block-fields'), form_data.slice(0, 2)) && 
+      numberValidation(form.querySelectorAll('.select-person'), form_data.slice(2, 5))
+  }
+
+  const dateValidation = (date_fields, in_out_dates) => {
+    if (in_out_dates[0].length === 0) {
+      inputError(date_fields[0])
+      return false
+    }
+    else
+      if (in_out_dates[1].length === 0) {
+        inputError(date_fields[1])
+        return false
+      }
+      else {
+        let date_parse = in_out_dates[0].split('.')
+        const in_date = new Date(date_parse[2], date_parse[1], date_parse[0])
+        date_parse = in_out_dates[1].split('.')
+        const out_date = new Date(date_parse[2], date_parse[1], date_parse[0])
+        if (in_date >= out_date) {
+          inputError(date_fields[1])
+          return false
+        }
+        else
+          return true
+      }
+  }
+
+  const numberValidation = (people_fields, peoples) => {
+    if (peoples[0] === 'none') {
+      inputError(people_fields[0])
+      return false
+    }
+    else
+      if (peoples[1] === 'none') {
+        inputError(people_fields[1])
+        return false
+      }
+      else
+        return true
+  }
+
+  const inputError = (field) => {
+    field.classList.add('block-fields-focus')
+    setTimeout(() => {
+      field.classList.remove('block-fields-focus')
+    }, 5000);
+  }
+
   const handleClickBooking = (event) => {
     event.preventDefault()
-    const pattern = /(\d{2})\.(\d{2})\.(\d{4})/;
-    const form = event.target.parentNode
-    const date_fields = form.querySelectorAll('.input-date')
-    const check_in = new Date(date_fields[0].value.replace(pattern,'$3-$2-$1')) 
-    const check_out = new Date(date_fields[1].value.replace(pattern,'$3-$2-$1')) 
-    if (check_in > check_out) {
-      date_fields[0].parentNode.parentNode.focus()
-    }
-    else {
+    const form = event.target
+    const check_fields = form.querySelectorAll('.input-date')
+    const people_fields = form.querySelectorAll('select')
+    const form_data = [check_fields[0].value, check_fields[1].value, people_fields[0].value, people_fields[1].value]
+    console.log(fieldsValidator(form, form_data))
+    if (fieldsValidator(form, form_data)) {
+      setInformation(form_data)
       document.querySelector('body').style.overflow = 'hidden'
       const reserve_list_block = document.querySelector('.reserve-list')
       reserve_list_block.style.display = 'flex'
       reserve_list_block.style.top = window.pageYOffset + 'px'
-
-      
     }
   }
 
@@ -54,7 +99,7 @@ export default function Booking() {
           </div>
         </form>
       </div>
-      <ReserveList />
+      <ReserveList information={information} />
     </div>
   )
 }

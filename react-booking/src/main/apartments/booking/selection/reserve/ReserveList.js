@@ -1,11 +1,25 @@
 import React from 'react'
 import SelectedParams from './SelectedParams'
+import axios from 'axios'
 
-export default function ReserveList({check_in_out_list, person_list = [2, 1]}) {
+export default function ReserveList({information}) {
 
   const handleSubmitReservation = (event) => {
     event.preventDefault()
-    // TODO: сделать отправку формы на сервер для подтверждения брони
+    const form = event.target
+    console.log(form.querySelector('.reserve-phone-checkbox').querySelectorAll('input').map)
+    const params = {
+      in_date: information[0], 
+      out_date: information[1],
+      person: information[2],
+      child: information[3],
+      first_name: form.querySelector('#first_name').value,
+      last_name: form.querySelector('#last_name').value,
+      email: form.querySelector('#email').value,
+      phone: form.querySelector('#phone').value,
+      phone_type: []
+    }
+    // axios.post('/')
   }
 
   const handleCancelReservation = (event) => {
@@ -16,9 +30,9 @@ export default function ReserveList({check_in_out_list, person_list = [2, 1]}) {
 
   return (
     <div className='reserve-list'>
-      <div className='reserve-data-list'>
+      <form className='reserve-data-list'>
         <h2>Личные данные</h2>
-        <SelectedParams dates={check_in_out_list} person_list={person_list} />
+        <SelectedParams information={information} />
 
         <div className='reserve-person-info-fields'>
           <p className='p-label'>Фамилия:</p>
@@ -58,11 +72,11 @@ export default function ReserveList({check_in_out_list, person_list = [2, 1]}) {
         </div>
 
         <div className='reserve-submit-button'>
-          <input type='button' value='Забронировать' id='reserve-submit' onClick={handleSubmitReservation} />
+          <input type='submit' value='Забронировать' id='reserve-submit' onClick={handleSubmitReservation} />
           <input type='button' value='Отменить' id='reserve-cancel' onClick={handleCancelReservation} />
         </div>
 
-      </div>
+      </form>
     </div>
   )
 }
